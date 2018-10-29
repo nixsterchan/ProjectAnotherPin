@@ -19,11 +19,28 @@ class OrderItemsController < ApplicationController
   def update
     @product = Product.find(params[:product_id])
 
+    @order_item = OrderItem.find(params[:id])
+
+    #update with the form params
+    @order_item.update(form_params)
+
     flash[:success] = "Thanks for updating your cart"
 
     redirect_to product_path(@product)
 
 
+  end
+
+  def destroy
+    @product = Product.find(params[:product_id])
+    @order_item = OrderItem.find(params[:id])
+
+    # delete completely
+    @order_item.delete
+
+    flash[:success] = "Product removed from cart"
+
+    redirect_to cart_path
   end
 
   def form_params

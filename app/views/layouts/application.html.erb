@@ -16,8 +16,8 @@
       <nav>
         <%= link_to 'Shop', products_path %>
         <%= link_to 'Info', info_path %>
-        <%= link_to '#' do %>
-          Cart #<%= @current_cart.id %> (0)
+        <%= link_to cart_path do %>
+          Cart (<%= @current_cart. total_quantity %>)
         <% end %>
       </nav>
     </header>
