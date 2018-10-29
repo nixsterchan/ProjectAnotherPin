@@ -2,4 +2,11 @@
 
 <%= simple_format @product.description %>
 
+<%= simple_form_for [@product, @order_item] do |f| %>
+  <%= f.input :quantity %>
+
+  <%= f.button :submit, "Add To Cart" %>
+
+<% end %>
+
 <p><%= link_to "Back to all products", products_path %></p>
