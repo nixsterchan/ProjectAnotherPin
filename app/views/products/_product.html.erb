@@ -4,4 +4,8 @@
   <% end %>
 
   <h3><%= link_to product.title, product_path(product) %>
+
+  <p>
+    <%= number_to_currency product.price_in_dollars %>
+  </p>
 </div>
